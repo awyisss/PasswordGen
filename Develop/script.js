@@ -9,9 +9,6 @@ let includeNumeric;
 let includeSpecial;
 let passwordText = document.getElementById("password")
 
-function askParameters() {
-  determineLength();
-}
 
 function determineLength() {
   passwordLength = window.prompt(
@@ -69,44 +66,4 @@ function generatePassword() {
 }
 
 
-
-
-
-
-//   // if (includeLowercase) {
-//   //   for (let i = 0; i < length; i++) {
-//   //     var randomCharSet = allChars[Math.floor(Math.random() * allChars.length)];
-//   //     var randomChar = randomCharSet[Math.floor(Math.random() * randomCharSet.length)];
-//   //     password += randomChar;
-//   //   }
-
-//   // password options is the same as lowercaseChars
-
-//   if (includeUppercase) {
-//     passwordOptions.concat(uppercaseChars)
-//   }
-
-//   // password options is the same as lowercaseChars AND uppercaseChars
-
-//   var newPassword = []
-//   // then for every char in the lenght of the password
-//   // some for loop
-//   // add a random index from passwordOptions to newPassword
-//   // newPassword.push(some random)
-//   // an array callend newPassword with a char for each place
-//   // ['8', 'l', '%']
-
-// }
-
-// // function determineUpper(){
-// //   passwordUpper = window.prompt("Would you like to use Uppercase")
-// //   if ("clicked")
-
-// // }
-
-// // function passwordParameters(){
-// //   if (isUppercase && isNumber !== isSpec
-
-// }
-
-document.getElementById("generate").addEventListener("click", askParameters);
+document.getElementById("generate").addEventListener("click", determineLength);
