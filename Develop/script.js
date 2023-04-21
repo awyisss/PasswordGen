@@ -1,16 +1,12 @@
-const lowercaseChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-const uppercaseChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-const numericChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const specialChars = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '\\', ';', ':', ',', '.', '<', '>', '/', '?'];
+const lowercaseChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; "abcdeghijklmnopqrstuvwxyz"
+const uppercaseChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const numericChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];" 0123456789"
+const specialChars = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '\\', ';', ':', ',', '.', '<', '>', '/', '?']; "!@#$%^&*()_-+={}[];:'`~<,>.?/|"
 let passwordLength 
 let includeLowercase
 let includeUppercase 
 let includeNumeric
 let includeSpecial
-let allChars
-// let passwordOptions
-
-// let passwordParameters
 
 
 function askParameters(){
@@ -25,42 +21,22 @@ function askParameters(){
 
 function determineLength(){
   passwordLength = window.prompt("Please input desired character limit (8-128)");
-
-  // if (passwordLength <= 8 || passwordLength >= 128 || isNaN(passwordLength)) {
-  //  alert()
-  // } else {
-
-  //   if (!includeLowercase) {
-    
-  //   } else {
-  //     generatePassword()
-  //   }
-  // }
-
-  if (passwordLength <8 || passwordLength >128 || isNaN(passwordLength)){
-
-    alert("Please input value within 8-128"); determineLength()
-  }
-  else if ( (passwordLength <=8) || passwordLength <=128) {
-
+    if (passwordLength <8 || passwordLength >128 || isNaN(passwordLength)){
+      alert("Please input value within 8-128"); determineLength()
+    }
+    else if ( (passwordLength <=8) || passwordLength <=128) {
     includeLowercase = confirm("Click [OK] to implement [Lowercase] characters.")
     includeUppercase = confirm("Click [OK] to implement [Uppercase] characters.");
     includeNumeric = confirm("Click [OK] to implement [Numeric] characters.");
     includeSpecial = confirm("Click [OK] to implement [Special] characters.");
 
-    if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
-
-      alert("Please select an attribute!"); determineLength()
+      if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
+        alert("Please select an attribute!"); determineLength()
     } 
     else  {
       generatePassword()
     }
   }
-   
-    
-    
-    
-  
 }
 
 
@@ -87,8 +63,7 @@ function generatePassword(){
 
   let password = "";
   for (let i = 0; i < passwordLength; i++) {
-    const password = passwordOptions[Math.floor(Math.random() * passwordLength)];
-    // password += randomChar;
+    const password = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
   }
   return password;
 }
